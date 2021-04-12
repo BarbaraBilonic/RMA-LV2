@@ -1,12 +1,13 @@
-package barbarabilonic.ferit.inspiringpeople
+package barbarabilonic.ferit.inspiringpeople.Activities
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import barbarabilonic.ferit.inspiringpeople.Listeners.OnImageClickListener
+import barbarabilonic.ferit.inspiringpeople.Adapters.PeopleAdapter
+import barbarabilonic.ferit.inspiringpeople.Persistence.PeopleRepository
 import barbarabilonic.ferit.inspiringpeople.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() , OnImageClickListener {
@@ -25,8 +26,8 @@ class MainActivity : AppCompatActivity() , OnImageClickListener {
         setContentView(mainBinding.root)
 
     }
-     fun createNewPearson(){
-         val newPearsonIntent=Intent(this,NewPearsonActivity::class.java)
+     private fun createNewPearson(){
+         val newPearsonIntent=Intent(this, NewPearsonActivity::class.java)
          startActivity(newPearsonIntent)
      }
     private fun setupRecyclerView(){
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity() , OnImageClickListener {
             LinearLayoutManager.VERTICAL,
             false
         )
-        mainBinding.rvPeople.adapter = PeopleAdapter(PeopleRepository.getPeople(),onImageClickListener)
+        mainBinding.rvPeople.adapter = PeopleAdapter(PeopleRepository.getPeople(), onImageClickListener)
     }
 
     override fun onResume() {

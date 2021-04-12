@@ -1,13 +1,15 @@
-package barbarabilonic.ferit.inspiringpeople
+package barbarabilonic.ferit.inspiringpeople.Adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import barbarabilonic.ferit.inspiringpeople.Model.InspiringPearson
+import barbarabilonic.ferit.inspiringpeople.Listeners.OnImageClickListener
+import barbarabilonic.ferit.inspiringpeople.R
 
 class PeopleAdapter (
-    people: List<InspiringPearson>,
-    private val listener: OnImageClickListener
+        people: List<InspiringPearson>,
+        private val listener: OnImageClickListener
     ) :
     RecyclerView.Adapter<PeopleViewHolder>() {
 
@@ -16,7 +18,7 @@ class PeopleAdapter (
             refreshData(people)
         }
 
-        public fun refreshData(people: List<InspiringPearson>) {
+         fun refreshData(people: List<InspiringPearson>) {
             this.people.clear()
             this.people.addAll(people)
             this.notifyDataSetChanged()

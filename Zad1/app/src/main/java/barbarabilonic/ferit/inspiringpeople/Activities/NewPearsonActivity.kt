@@ -1,7 +1,9 @@
-package barbarabilonic.ferit.inspiringpeople
+package barbarabilonic.ferit.inspiringpeople.Activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import barbarabilonic.ferit.inspiringpeople.Model.InspiringPearson
+import barbarabilonic.ferit.inspiringpeople.Persistence.PeopleRepository
 import barbarabilonic.ferit.inspiringpeople.databinding.ActivityAddPearsonBinding
 
 class NewPearsonActivity : AppCompatActivity() {
@@ -21,7 +23,7 @@ class NewPearsonActivity : AppCompatActivity() {
         val description=newPearsonBinding.etPearsonDescriptionInput.text.toString()
         val quote=newPearsonBinding.etPearsonQuoteInput.text.toString()
         val imageURL=newPearsonBinding.etPearsonImageURLInput.text.toString()
-        val inspiringPearson=InspiringPearson(name,date,description,listOf(quote),imageURL)
+        val inspiringPearson= InspiringPearson(name, date, description, quote, imageURL)
         PeopleRepository.addPearson(inspiringPearson)
         finish()
     }
