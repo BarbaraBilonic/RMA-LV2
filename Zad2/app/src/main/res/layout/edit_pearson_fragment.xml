@@ -61,7 +61,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="@dimen/margin"
         app:layout_constraintTop_toBottomOf="@id/til_pearson_date_birth_death_edit"
-        app:layout_constraintBottom_toTopOf="@id/til_pearson_quote_edit">
+        app:layout_constraintBottom_toTopOf="@id/til_pearson_quote_edit1">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_pearson_description_edit"
@@ -74,7 +74,7 @@
             />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_pearson_quote_edit"
+        android:id="@+id/til_pearson_quote_edit1"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -82,10 +82,32 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="@dimen/margin"
         app:layout_constraintTop_toBottomOf="@id/til_pearson_description_edit"
+        app:layout_constraintBottom_toTopOf="@id/til_pearson_quote_edit2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_pearson_quote_edit1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textMultiLine"
+            android:maxLines="10"
+            android:scrollbars="vertical"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_pearson_quote_edit2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="@dimen/margin"
+        app:layout_constraintTop_toBottomOf="@id/til_pearson_quote_edit1"
         app:layout_constraintBottom_toTopOf="@id/til_pearson_imageURL_edit">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_pearson_quote_edit"
+            android:id="@+id/et_pearson_quote_edit2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textMultiLine"
@@ -103,7 +125,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="@dimen/margin"
-        app:layout_constraintTop_toBottomOf="@id/til_pearson_quote_edit"
+        app:layout_constraintTop_toBottomOf="@id/til_pearson_quote_edit2"
         app:layout_constraintBottom_toTopOf="@id/btn_delete">
 
         <com.google.android.material.textfield.TextInputEditText

@@ -42,7 +42,8 @@ class EditPearsonFragment(private val index:Int) : Fragment() {
         editPearsonFragmentBinding.etPearsonNameEdit.setText(pearson.name)
         editPearsonFragmentBinding.etPearsonDateBirthDeathEdit.setText(pearson.dateBirthDeath)
         editPearsonFragmentBinding.etPearsonDescriptionEdit.setText(pearson.description)
-        editPearsonFragmentBinding.etPearsonQuoteEdit.setText(pearson.quote)
+        editPearsonFragmentBinding.etPearsonQuoteEdit1.setText(pearson.getQuote(0))
+        editPearsonFragmentBinding.etPearsonQuoteEdit2.setText(pearson.getQuote(1))
         editPearsonFragmentBinding.etPearsonImageURLEdit.setText(pearson.imageUrl)
     }
 
@@ -50,14 +51,14 @@ class EditPearsonFragment(private val index:Int) : Fragment() {
        PeopleRepository.getPearson(index).name=editPearsonFragmentBinding.etPearsonNameEdit.text.toString()
         PeopleRepository.getPearson(index).dateBirthDeath=editPearsonFragmentBinding.etPearsonDateBirthDeathEdit.text.toString()
         PeopleRepository.getPearson(index).description=editPearsonFragmentBinding.etPearsonDescriptionEdit.text.toString()
-        PeopleRepository.getPearson(index).quote=editPearsonFragmentBinding.etPearsonQuoteEdit.text.toString()
+        PeopleRepository.getPearson(index).quotes= listOf(editPearsonFragmentBinding.etPearsonQuoteEdit1.text.toString(),editPearsonFragmentBinding.etPearsonQuoteEdit2.text.toString())
         PeopleRepository.getPearson(index).imageUrl=editPearsonFragmentBinding.etPearsonImageURLEdit.text.toString()
 
 
     }
 
     companion object {
-        const val TAG = "Notes list"
+        const val TAG = "Edit pearson"
 
     }
 

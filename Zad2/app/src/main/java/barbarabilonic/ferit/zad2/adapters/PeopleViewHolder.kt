@@ -17,7 +17,7 @@ class PeopleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         Picasso.get().load(pearson.imageUrl).into(itemBinding.ivPearsonPicture)
         itemBinding.ivPearsonPicture.isClickable
         itemBinding.ivPearsonPicture.setOnClickListener {
-            listener.onImageClick(pearson.quote)
+            listener.onImageClick(pearson.getQuote())
         }
 
 

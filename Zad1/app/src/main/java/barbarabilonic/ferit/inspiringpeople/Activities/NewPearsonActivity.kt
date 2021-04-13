@@ -13,17 +13,17 @@ class NewPearsonActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         newPearsonBinding= ActivityAddPearsonBinding.inflate(layoutInflater)
-        newPearsonBinding.btnNewPearsonSave.setOnClickListener{saveNote()}
+        newPearsonBinding.btnNewPearsonSave.setOnClickListener{savePearson()}
         setContentView(newPearsonBinding.root)
     }
 
-    private fun saveNote(){
+    private fun savePearson(){
         val name=newPearsonBinding.etPearsonNameInput.text.toString()
         val date=newPearsonBinding.etPearsonDateBirthDeathInput.text.toString()
         val description=newPearsonBinding.etPearsonDescriptionInput.text.toString()
-        val quote=newPearsonBinding.etPearsonQuoteInput.text.toString()
+        val quotes=listOf(newPearsonBinding.etPearsonQuoteInput1.text.toString(),newPearsonBinding.etPearsonQuoteInput2.text.toString())
         val imageURL=newPearsonBinding.etPearsonImageURLInput.text.toString()
-        val inspiringPearson= InspiringPearson(name, date, description, quote, imageURL)
+        val inspiringPearson= InspiringPearson(name, date, description, quotes, imageURL)
         PeopleRepository.addPearson(inspiringPearson)
         finish()
     }

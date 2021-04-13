@@ -21,7 +21,7 @@ class AddPearsonFragment : Fragment() {
     ): View {
         addPearsonBinding = FragmentAddPearsonBinding.inflate(inflater, container, false)
         addPearsonBinding.btnNewPearsonSave.setOnClickListener{
-            saveNote()
+            savePearson()
             onPearsonSaveClick.onPearsonSave()
 
         }
@@ -35,19 +35,19 @@ class AddPearsonFragment : Fragment() {
         }
     }
 
-    private fun saveNote(){
+    private fun savePearson(){
        val id= PeopleRepository.getNextId()
         val name=addPearsonBinding.etPearsonNameInput.text.toString()
         val date=addPearsonBinding.etPearsonDateBirthDeathInput.text.toString()
         val description=addPearsonBinding.etPearsonDescriptionInput.text.toString()
-        val quote=addPearsonBinding.etPearsonQuoteInput.text.toString()
+        val quotes=listOf(addPearsonBinding.etPearsonQuoteInput1.text.toString(),addPearsonBinding.etPearsonQuoteInput2.text.toString())
         val imageURL=addPearsonBinding.etPearsonImageURLInput.text.toString()
         val inspiringPearson= InspiringPearson(
             id,
             name,
             date,
             description,
-            quote,
+            quotes,
             imageURL
         )
         PeopleRepository.addPearson(inspiringPearson)
